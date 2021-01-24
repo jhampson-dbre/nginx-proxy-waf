@@ -40,7 +40,7 @@ RUN echo "Installing ModSec Library" && \
     git -C /opt/ModSecurity submodule update --init --recursive && \
     (cd "/opt/ModSecurity" && \
         ./build.sh && \
-        ./configure --with-lmdb && \
+        ./configure && \
         make && \
         make install \
     ) && \
@@ -70,7 +70,17 @@ RUN echo 'Installing Nginx Modules' && \
 FROM $BUILD_FROM
 
 # Setup base
-RUN apk add --no-cache nginx openssl && mkdir /etc/nginx/modsec
+RUN apk add --no-cache \
+    curl-dev \
+    libmaxminddb-dev \
+    libstdc++ \
+    libxml2-dev \
+    lmdb-dev \
+    tzdata \
+    yajl \
+    nginx \
+    openssl \
+    && mkdir /etc/nginx/modsec
 
 # Copy owasp-modsecurity-crs and modsecurity from the build image
 COPY --from=build_modsecurity /usr/local/modsecurity /usr/local/modsecurity
