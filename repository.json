@@ -1,0 +1,5 @@
+{
+    "name": "NGINX Reverse Proxy with Web Application Firewall",
+    "url": "https://github.com/jhampson-dbre/addon-nginx-proxy-waf",
+    "maintainer": "Jared Hampson <jhampson.dbre@gmail.com>"
+  }
