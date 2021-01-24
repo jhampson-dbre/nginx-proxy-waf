@@ -1,7 +1,7 @@
 ARG NGINX_VER=1.16.1
 ARG BUILD_FROM
 
-FROM nginx:${NGINX_VER}-alpine as build_modsecurity
+FROM $BUILD_FROM as build_modsecurity
 
 ARG MODSEC_BRANCH=v3.0.4
 ARG OWASP_BRANCH=v3.3/master
@@ -19,10 +19,8 @@ RUN echo "Installing Dependencies" && \
     flex \
     g++ \
     gcc \
-    geoip-dev \
     git \
     libc-dev \
-    libmaxminddb-dev \
     libstdc++ \
     libtool \
     libxml2-dev \
@@ -72,7 +70,6 @@ FROM $BUILD_FROM
 # Setup base
 RUN apk add --no-cache \
     curl-dev \
-    libmaxminddb-dev \
     libstdc++ \
     libxml2-dev \
     lmdb-dev \
