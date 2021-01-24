@@ -17,9 +17,6 @@ jobs:
   build:
     name: Test build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: ["aarch64", "amd64", "armhf", "i386"]
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
