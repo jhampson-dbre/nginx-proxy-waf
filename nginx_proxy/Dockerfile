@@ -1,4 +1,5 @@
 ARG NGINX_VER=1.16.1
+ARG BUILD_FROM
 
 FROM nginx:${NGINX_VER}-alpine as build_modsecurity
 
@@ -66,7 +67,6 @@ RUN echo 'Installing Nginx Modules' && \
     apk del general-dependencies
 
 
-ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Setup base
