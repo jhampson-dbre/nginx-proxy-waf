@@ -1,7 +1,7 @@
 ARG NGINX_VER=1.16.1
 ARG BUILD_FROM
 
-FROM nginx:${NGINX_VER}-alpine as build_modsecurity
+FROM ${BUILD_FROM}
 
 ARG MODSEC_BRANCH=v3.0.4
 ARG OWASP_BRANCH=v3.3/master
