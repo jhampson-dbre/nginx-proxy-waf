@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: ["aarch64", "amd64", "armhf", "arm/v7", "i386"]
+        platform: ["aarch64", "amd64", "armhf", "i386"]
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
