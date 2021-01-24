@@ -26,7 +26,7 @@ jobs:
       with:
         args: |
           --test \
-          --aarch64 \
+          --amd64 \
           --target modsecurity/
 
     # - name: Test build
