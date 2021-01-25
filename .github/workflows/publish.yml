@@ -16,10 +16,17 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    # - name: Publish
+    #   uses: home-assistant/builder@master
+    #   with:
+    #     args: |
+    #       --all \
+    #       --target nginx_proxy/modsecurity/ \
+    #       --docker-hub jhampdbre
     - name: Publish
       uses: home-assistant/builder@master
       with:
         args: |
           --all \
-          --target nginx_proxy/modsecurity/ \
+          --target nginx_proxy/ \
           --docker-hub jhampdbre
