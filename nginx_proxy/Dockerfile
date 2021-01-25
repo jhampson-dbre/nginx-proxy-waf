@@ -1,6 +1,7 @@
 ARG BUILD_FROM
+ARG BUILD_ARCH
 
-FROM jhampdbre/${BUILD_FROM}-nginx-116-modsecurity as build_modsecurity
+FROM jhampdbre/${BUILD_ARCH}-nginx-116-modsecurity as build_modsecurity
 
 FROM $BUILD_FROM
 
