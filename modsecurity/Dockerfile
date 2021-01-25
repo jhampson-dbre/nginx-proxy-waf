@@ -59,6 +59,7 @@ RUN echo 'Installing Nginx Modules' && \
             --add-dynamic-module=../ModSecurity-nginx && \
         make modules \
     ) && \
+    mkdir -p /usr/lib/nginx/modules && \
     cp /opt/nginx-${NGINX_VERSION}/objs/ngx_http_modsecurity_module.so \
         /usr/lib/nginx/modules/ && \
     rm -fr /opt/* && \
