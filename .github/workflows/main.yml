@@ -27,7 +27,7 @@ jobs:
         args: |
           --test \
           --all \
-          --target modsecurity/
+          --target nginx_proxy/modsecurity/
 
     # - name: Test build
     #   uses: home-assistant/builder@master
