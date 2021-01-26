@@ -1,33 +1,45 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI modsecurity
 
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
+    paths:
+    - 'nginx_proxy/modsecurity/**'
   pull_request:
     branches: [ main ]
+    paths:
+    - 'nginx_proxy/modsecurity/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Test build
+  build_modsecurity:
+    name: Test build modsecurity
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
 
-    # - name: Test modsecurity build
-    #   uses: home-assistant/builder@master
-    #   with:
-    #     args: |
-    #       --test \
-    #       --all \
-    #       --target nginx_proxy/modsecurity/
+    - name: Test modsecurity build
+      uses: home-assistant/builder@master
+      with:
+        args: |
+          --test \
+          --all \
+          --target nginx_proxy/modsecurity/
+
+  build_nginx:
+    name: Test build nginx
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+
 
     - name: Test build
       uses: home-assistant/builder@master

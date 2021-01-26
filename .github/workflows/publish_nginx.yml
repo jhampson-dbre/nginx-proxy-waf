@@ -1,8 +1,9 @@
-name: 'Publish'
+name: Publish nginx
 
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -16,14 +17,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    # - name: Publish
-    #   uses: home-assistant/builder@master
-    #   with:
-    #     args: |
-    #       --all \
-    #       --target nginx_proxy/modsecurity/ \
-    #       --docker-hub jhampdbre
-    - name: Publish
+    - name: Publish nginx
       uses: home-assistant/builder@master
       with:
         args: |
