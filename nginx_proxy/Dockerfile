@@ -2,12 +2,14 @@ ARG BUILD_FROM
 ARG BUILD_ARCH
 
 FROM jhampdbre/${BUILD_ARCH}-nginx-116-modsecurity as build_modsecurity
+# FROM local/modsecurity as build_modsecurity
 
 FROM $BUILD_FROM
 
 # Setup base
 RUN apk add --no-cache \
     curl-dev \
+    libmaxminddb-dev \
     libstdc++ \
     libxml2-dev \
     lmdb-dev \

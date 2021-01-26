@@ -10,25 +10,34 @@ WORKDIR /opt
 
 # Install dependencies; includes dependencies required for compile-time options:
 # curl, libxml, pcre, and lmdb and Modsec
+# https://build.alpinelinux.org/buildlogs/build-3-11-x86_64/main/nginx/nginx-1.16.1-r6.log
 RUN echo "Installing Dependencies" && \
     apk add --no-cache --virtual general-dependencies \
+    alpine-sdk \
     autoconf \
     automake \
     byacc \
     curl-dev \
+    findutils \
     flex \
     g++ \
     gcc \
+    gd-dev \
+    geoip-dev \
     git \
     libc-dev \
+    libedit-dev \
     libstdc++ \
     libtool \
     libxml2-dev \
+    libxslt-dev \
     linux-headers \
     lmdb-dev \
     make \
+    libmaxminddb-dev \
     openssl-dev \
     pcre-dev \
+    perl-dev \
     yajl-dev \
     zlib-dev
 
@@ -53,6 +62,7 @@ RUN echo 'Cloning Modsec Nginx Connector and ModSec OWASP Rules' && \
     wget -O - https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz | tar -xz
 
 # Install ModSecurity Nginx modules
+# https://git.alpinelinux.org/aports/tree/main/nginx/APKBUILD?h=3.11-stable
 RUN echo 'Installing Nginx Modules' && \
     (cd "/opt/nginx-${NGINX_VERSION}" && \
         ./configure --add-dynamic-module=../ModSecurity-nginx --prefix=/var/lib/nginx \
