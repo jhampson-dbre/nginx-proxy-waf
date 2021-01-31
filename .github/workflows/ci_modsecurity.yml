@@ -31,6 +31,7 @@ jobs:
         args: |
           --test \
           --all \
+          --generic 0.0.2 \
           --target nginx_proxy/modsecurity/
 
   build_nginx:

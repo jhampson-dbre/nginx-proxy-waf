@@ -19,6 +19,7 @@ jobs:
       with:
         args: |
           --all \
+          --generic 0.0.2 \
           --target nginx_proxy/modsecurity/ \
           --docker-hub jhampdbre
   publish_nginx:

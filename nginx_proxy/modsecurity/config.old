@@ -1,0 +1,9 @@
+{
+  "name": "ModSecurity",
+  "version": "0.0.1",
+  "slug": "nginx-modsecurity",
+  "description": "An SSL/TLS proxy",
+  "url": "https://github.com/jhampson-dbre/addon-nginx-proxy-waf/modsecurity",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "image": "jhampdbre/{arch}-nginx-116-modsecurity"
+}
