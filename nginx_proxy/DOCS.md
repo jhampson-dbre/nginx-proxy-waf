@@ -85,9 +85,9 @@ Controls the behavior of ModSecurity web application firewall. Allowed values ar
 
 - By default, port 80 is disabled in the add-on configuration in case the port is needed for other components or add-ons like `emulated_hue`.
 
-- Legitimate actions can trigger a false positive in ModSecurity, resulting in HTTP 403 error message and ModSecurity error messages in add-on log. If ModSecurity inadvertently blocks a legitimate request, there are two main workarounds:
+- Legitimate actions can trigger a false positive in ModSecurity, resulting in HTTP 403 error message and ModSecurity error messages in the add-on log. If ModSecurity inadvertently blocks a legitimate request, there are two main workarounds:
    1. Avoid requests being processed through ModSecurity by accessing Home Assistant using the internal connection URL (e.g. homeassistant.local:8123), then retry the blocked action.
-   2. Temporarily disable ModSecurity by changing `security_mode` to `DetectionOnly`, restart the NGINX Home Assistant SSL Proxy addon, then retry the blocked action. Afterwards, re-enable ModSecurity by changing `security_mode` to `On` and restart the addon again.
+   2. Temporarily disable ModSecurity by changing `security_mode` to `DetectionOnly`, restart the NGINX Home Assistant SSL Proxy add-on, then retry the blocked action. Afterwards, re-enable ModSecurity by changing `security_mode` to `On` and restart the add-on again.
 
 ## Support
 
