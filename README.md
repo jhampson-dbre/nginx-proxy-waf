@@ -12,10 +12,9 @@ Including ModSecurity in the NGINX SSL Proxy add-on provides an easy to adopt la
 
 To use ModSecurity in NGINX SSL Proxy, one new configuration option is implemented:
 
-- `security_mode`: Controls the behavior of ModSecurity web application firewall. Valid values are:
+- `security.mode`: Controls the behavior of ModSecurity web application firewall. Valid values are:
   1. `DetectionOnly` - (default) process security rules and log detections but never executes any disruptive actions (block, deny, drop)
   2. `On` - process security rules; blocks potentially malicious requests
-  3. `Off` - do not process security rules
 
 The ability easily run in "report only" mode or completely disable ModSecurity greatly reduces the user impact in case of any false positive detections or other unforeseen issues occur.
 
