@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.12
+
+- Fix syntax for run.sh
+
 ## 3.0.11
 
 - Refactor configuration options for ModSecurity to improve flexibility

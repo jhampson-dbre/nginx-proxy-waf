@@ -68,9 +68,9 @@ if bashio::config.true 'security.active'; then
     SECURITY_MODE=$(bashio::config 'security.mode')
 
     # Enable ModSecurity
-    sed -i "s|#load_module modules/ngx_http_modsecurity_module.so;|load_module modules/ngx_http_modsecurity_module.so;|" \
-        -s "s|#modsecurity on;|modsecurity on;|" \
-        -s "s#modsecurity_rules_file /etc/nginx/modsec/main.conf;|modsecurity_rules_file /etc/nginx/modsec/main.conf;|" \
+    sed -i -e "s|#load_module modules/ngx_http_modsecurity_module.so;|load_module modules/ngx_http_modsecurity_module.so;|" \
+        -e "s|#modsecurity on;|modsecurity on;|" \
+        -e "s#modsecurity_rules_file /etc/nginx/modsec/main.conf;|modsecurity_rules_file /etc/nginx/modsec/main.conf;|" \
         /etc/nginx.conf
 
 
