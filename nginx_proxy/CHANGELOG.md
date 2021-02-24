@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.11
+
+- Refactor configuration options for ModSecurity to improve flexibility
+
 ## 3.0.1
 
 - Fix the use of subfolders with certificate files
