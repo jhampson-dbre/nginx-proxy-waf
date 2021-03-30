@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.14
+
+- Bump nginx-116-modsecurity to 0.0.3
+
 ## 3.0.12
 
 - Fix syntax for run.sh
