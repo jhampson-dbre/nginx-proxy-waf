@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.15
+
+- Move data files to rootfs
+
 ## 3.0.14
 
 - Bump nginx-116-modsecurity to 0.0.3
