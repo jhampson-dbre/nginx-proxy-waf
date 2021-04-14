@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.16
+
+- Add security exclusion rule for false positive when starting File Editor addon
+
 ## 3.0.15
 
 - Move data files to rootfs
