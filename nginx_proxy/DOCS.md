@@ -86,7 +86,7 @@ Controls the behavior of ModSecurity web application firewall. Allowed values ar
 - `DetectionOnly` - (default) process security rules and log detections but never executes any disruptive actions (block, deny, drop)
 - `On` - process security rules; blocks potentially malicious requests
 
-### Option `security.debug` (required)
+### Option `security.debug` (optional)
 
 If true, writes the ModSecurity audit log to the addon log. Useful for reporting false positives.
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.19
+
+- Make security.debug optional to fix add-on startup failure after upgrade
 ## 3.0.18
 
 - Add additional security exclusion rule for false positive when using Grafana/InfluxDB addons
