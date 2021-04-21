@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.18
+
+- Add additional security exclusion rule for false positive when using Grafana/InfluxDB addons
+
 ## 3.0.17
 
 - Add security exclusion rule for false positive when using Grafana/InfluxDB addons
