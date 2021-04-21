@@ -34,7 +34,8 @@
     },
     "security": {
       "active": false,
-      "mode": "DetectionOnly"
+      "mode": "DetectionOnly",
+      "debug": true
     }
   },
   "schema": {
@@ -50,7 +51,8 @@
     },
     "security": {
       "active": "bool",
-      "mode": "list(DetectionOnly|On)"
+      "mode": "list(DetectionOnly|On)",
+      "debug": "bool"
     }
   },
   "image": "jhampdbre/{arch}-nginx-116-proxy-waf"

@@ -86,6 +86,10 @@ Controls the behavior of ModSecurity web application firewall. Allowed values ar
 - `DetectionOnly` - (default) process security rules and log detections but never executes any disruptive actions (block, deny, drop)
 - `On` - process security rules; blocks potentially malicious requests
 
+### Option `security.debug` (required)
+
+If true, writes the ModSecurity audit log to the addon log. Useful for reporting false positives.
+
 ## Known issues and limitations
 
 - By default, port 80 is disabled in the add-on configuration in case the port is needed for other components or add-ons like `emulated_hue`.

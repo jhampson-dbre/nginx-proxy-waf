@@ -37,6 +37,6 @@ I'm open for any other solutions to resolving the slow compiles on ARM builds.
 
 3. The default configuration of OWASP CRS "should face [false positives] rarely, and therefore it is recommended for all sites and applications", however, if any false positives are encountered, they would need to be addressed by creating an exclusion policy and/or filing an issue in the CRS repository.
 
-Looking forward to any feedback. If you enounter a false positive with ModSecurity blocking a legitimate action, please open a GitHub issue and include the output from addon log (with any IP addresses or other potentially sensitive information obfuscated).
+Looking forward to any feedback. If you enounter a false positive with ModSecurity blocking a legitimate action, please ensure the `security.debug` option is set to true and open a GitHub issue, including the debug output from addon log (with any IP addresses or other potentially sensitive information obfuscated).
 
 Ref: [Compiling and Installing ModSecurity for NGINX Open Source](https://www.nginx.com/blog/compiling-and-installing-modsecurity-for-open-source-nginx/)

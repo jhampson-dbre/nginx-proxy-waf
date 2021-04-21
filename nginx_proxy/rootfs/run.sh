@@ -76,6 +76,13 @@ if bashio::config.true 'security.active'; then
 
     # Configure ModSecurity run mode
     sed -i "s/%%SECURITY_MODE%%/$SECURITY_MODE/g" /etc/nginx/modsec/modsecurity.conf
+
+    # If security debug enabled, write modsecurity audit log to stdout
+    if bashio::config.true 'security.debug'; then
+        sed -i "s|%%SECURITY_DEBUG%%|/dev/stdout|g" /etc/nginx/modsec/modsecurity.conf
+    else
+        sed -i "s|%%SECURITY_DEBUG%%|/var/log/modsec_audit.log|g" /etc/nginx/modsec/modsecurity.conf
+    fi
 fi
 
 # start server
