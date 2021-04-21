@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.17
+
+- Add security exclusion rule for false positive when using Grafana/InfluxDB addons
+- Add security.debug option to display detailed info about requests blocked by ModSecurity
+
 ## 3.0.16
 
 - Add security exclusion rule for false positive when starting File Editor addon
