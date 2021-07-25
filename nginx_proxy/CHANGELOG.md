@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.20
+
+- Add additional security exclusion rule for false positive when saving files with File Editor addon
+
 ## 3.0.19
 
 - Make security.debug optional to fix add-on startup failure after upgrade
