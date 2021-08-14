@@ -1,15 +1,12 @@
 {
-  "version": "0.0.3",
+  "version": "1.0.0",
   "build_from": {
-    "aarch64": "homeassistant/aarch64-base:3.11",
-    "amd64": "homeassistant/amd64-base:3.11",
-    "armhf": "homeassistant/armhf-base:3.11",
-    "armv7": "homeassistant/armv7-base:3.11",
-    "i386": "homeassistant/i386-base:3.11"
+    "aarch64": "homeassistant/aarch64-base:3.14",
+    "amd64": "homeassistant/amd64-base:3.14"
   },
-  "image": "jhampdbre/{arch}-nginx-116-modsecurity",
+  "image": "jhampdbre/{arch}-nginx-1.20.1-modsecurity",
   "args": {
-    "NGINX_VERSION": "1.16.1",
+    "NGINX_VERSION": "1.20.1",
     "MODSEC_BRANCH": "v3/master",
     "OWASP_BRANCH": "v3.3/master"
   }
