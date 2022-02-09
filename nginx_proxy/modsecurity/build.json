@@ -1,12 +1,12 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "build_from": {
-    "aarch64": "homeassistant/aarch64-base:3.14",
-    "amd64": "homeassistant/amd64-base:3.14"
+    "aarch64": "ghcr.io/home-assistant/aarch64-base:3.14",
+    "amd64": "ghcr.io/home-assistant/amd64-base:3.14"
   },
-  "image": "jhampdbre/{arch}-nginx-1.20.1-modsecurity",
+  "image": "jhampdbre/{arch}-nginx-1.20.2-modsecurity",
   "args": {
-    "NGINX_VERSION": "1.20.1",
+    "NGINX_VERSION": "1.20.2",
     "MODSEC_BRANCH": "v3/master",
     "OWASP_BRANCH": "v3.3/master"
   }
