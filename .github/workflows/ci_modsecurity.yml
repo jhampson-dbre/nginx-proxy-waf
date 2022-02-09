@@ -6,13 +6,13 @@ name: CI modsecurity
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-    - 'nginx_proxy/modsecurity/**'
+      - "nginx_proxy/modsecurity/**"
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
-    - 'nginx_proxy/modsecurity/**'
+      - "nginx_proxy/modsecurity/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,30 +22,29 @@ jobs:
     name: Test build modsecurity
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
-    - name: Test modsecurity build
-      uses: home-assistant/builder@master
-      with:
-        args: |
-          --test \
-          --all \
-          --generic 0.0.3 \
-          --target nginx_proxy/modsecurity/
+      - name: Test modsecurity build
+        uses: home-assistant/builder@master
+        with:
+          args: |
+            --test \
+            --all \
+            --generic 1.0.1 \
+            --target nginx_proxy/modsecurity/
 
   build_nginx:
     name: Test build nginx
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
-
-    - name: Test build
-      uses: home-assistant/builder@master
-      with:
-        args: |
-          --test \
-          --all \
-          --target nginx_proxy/
+      - name: Test build
+        uses: home-assistant/builder@master
+        with:
+          args: |
+            --test \
+            --all \
+            --target nginx_proxy/
