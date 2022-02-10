@@ -28,7 +28,6 @@ RUN set -x \
     exit 1; \
     fi \
     && apk add -X "https://nginx.org/packages/alpine/v$(egrep -o '^[0-9]+\.[0-9]+' /etc/alpine-release)/main" --no-cache ${NGINX_VERSION}-r${PKG_RELEASE} \
-    ;; \
     && mkdir /etc/nginx/modsec
 
 # Copy owasp-modsecurity-crs and modsecurity from the build image
