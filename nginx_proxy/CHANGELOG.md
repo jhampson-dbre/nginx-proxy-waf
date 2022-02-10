@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.0.0
+
+BREAKING CHANGE: Nginx is updated to version 1.20.2. As part of this update, we are switching from the default Alpine nginx package to the nginx.org package to streamline the process to install ModSecurity. The nginx.org package is only available for aarch64 and amd64. Therefore, the following CPU architectures are no longer supported:
+
+- armhf
+- armv7
+- i386
+
+Other noteworth changes:
+
+- Bump Alpine version to 3.14
+- Pull add-on base image from ghcr instead of docker hub
+
 ## 3.0.20
 
 - Add additional security exclusion rule for false positive when saving files with File Editor addon

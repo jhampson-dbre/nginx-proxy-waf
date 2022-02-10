@@ -46,14 +46,14 @@ RUN echo "Installing ModSec Library" && \
     git clone -b ${MODSEC_BRANCH} --depth 1 https://github.com/SpiderLabs/ModSecurity && \
     git -C /opt/ModSecurity submodule update --init --recursive && \
     (cd "/opt/ModSecurity" && \
-        ./build.sh && \
-        ./configure && \
-        make -j4 && \
-        make install \
+    ./build.sh && \
+    ./configure && \
+    make -j4 && \
+    make install \
     ) && \
     rm -fr /opt/ModSecurity \
-        /usr/local/modsecurity/lib/libmodsecurity.a \
-        /usr/local/modsecurity/lib/libmodsecurity.la
+    /usr/local/modsecurity/lib/libmodsecurity.a \
+    /usr/local/modsecurity/lib/libmodsecurity.la
 
 # Clone Modsec Nginx Connector, ModSec OWASP Rules, and download/extract nginx and GeoIP databases
 RUN echo 'Cloning Modsec Nginx Connector and ModSec OWASP Rules' && \
@@ -62,14 +62,13 @@ RUN echo 'Cloning Modsec Nginx Connector and ModSec OWASP Rules' && \
     wget -O - https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz | tar -xz
 
 # Install ModSecurity Nginx modules
-# https://git.alpinelinux.org/aports/tree/main/nginx/APKBUILD?h=3.11-stable
 RUN echo 'Installing Nginx Modules' && \
     (cd "/opt/nginx-${NGINX_VERSION}" && \
-        ./configure --with-compat --add-dynamic-module=../ModSecurity-nginx \
-        && make modules \
+    ./configure --with-compat --add-dynamic-module=../ModSecurity-nginx \
+    && make modules \
     ) && \
     mkdir -p /usr/lib/nginx/modules && \
     cp /opt/nginx-${NGINX_VERSION}/objs/ngx_http_modsecurity_module.so \
-        /usr/lib/nginx/modules/ && \
+    /usr/lib/nginx/modules/ && \
     rm -fr /opt/* && \
     apk del general-dependencies
