@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.1
+
+Fix add-on image name format
+
 ## 4.0.0
 
 BREAKING CHANGE: Nginx is updated to version 1.20.2. As part of this update, we are switching from the default Alpine nginx package to the nginx.org package to streamline the process to install ModSecurity. The nginx.org package is only available for aarch64 and amd64. Therefore, the following CPU architectures are no longer supported:
