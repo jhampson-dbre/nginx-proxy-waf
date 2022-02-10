@@ -2,11 +2,13 @@ ARG BUILD_FROM
 ARG BUILD_ARCH
 ARG BUILD_MODSECURITY_VERSION
 ARG NGINX_VERSION
-ARG PKG_RELEASE
 
 FROM jhampdbre/${BUILD_ARCH}-nginx-${NGINX_VERSION}-modsecurity:${BUILD_MODSECURITY_VERSION} as build_modsecurity
 
 FROM $BUILD_FROM
+
+ARG NGINX_VERSION
+ARG PKG_RELEASE
 
 # Setup base
 RUN set -x \
@@ -27,7 +29,8 @@ RUN set -x \
     echo "key verification failed!"; \
     exit 1; \
     fi \
-    && apk add -X "https://nginx.org/packages/alpine/v$(egrep -o '^[0-9]+\.[0-9]+' /etc/alpine-release)/main" --no-cache ${NGINX_VERSION}-r${PKG_RELEASE} \
+    && ALPINE_VERSION=$(egrep -o '^[0-9]+\.[0-9]+' /etc/alpine-release) \
+    && apk add -X "https://nginx.org/packages/alpine/v${ALPINE_VERSION}/main" --no-cache nginx=${NGINX_VERSION}-r${PKG_RELEASE} \
     && mkdir /etc/nginx/modsec
 
 # Copy owasp-modsecurity-crs and modsecurity from the build image
