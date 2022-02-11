@@ -83,6 +83,11 @@ if bashio::config.true 'security.active'; then
     else
         sed -i "s|%%SECURITY_DEBUG%%|/var/log/modsec_audit.log|g" /etc/nginx/modsec/modsecurity.conf
     fi
+
+    if bashio::config.true 'security.customize'; then
+        sed -i 's|#Include "/share/nginx_proxy/rules/*.conf"|Include "/share/nginx_proxy/rules/*.conf"|' /etc/modsec/main.conf
+    fi
+
 fi
 
 # start server
