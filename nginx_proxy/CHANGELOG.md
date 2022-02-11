@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.1.0
+
+Add new `security.customize` option to allow for creating custom ModSecurity exclusion rules. See the docs for details.
+
 ## 4.0.1
 
 Fix add-on image name format
