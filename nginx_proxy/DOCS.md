@@ -90,6 +90,21 @@ Controls the behavior of ModSecurity web application firewall. Allowed values ar
 
 If true, writes the ModSecurity audit log to the addon log. Useful for reporting false positives.
 
+### Option `security.customize` (optional)
+
+If true, loads custom ModSecurity rules files from /share/nginx_proxy/rules/*.conf
+
+**WARNING:** Do NOT enable this option without first creating a valid ModSecurity rules file in `/share/nginx_proxy/rules`. Rules files should be named using the ModSecurity standard naming convention, such as `REQUEST-900.9002-HOME-ASSISTANT-CUSTOM-EXCLUSION-RULES.conf`
+
+If this option is enabled without creating a valid rules file, the add-on will not be able to start.
+So that you can still access Home Assistant if the add-on is unable to start, you should access Home Assistant using the internal connection URL (e.g. homeassistant.local:8123) or IP address when enabling this option or making changes to custom rules files.
+
+Helpful resources for how to write ModSecurity exclusion rules:
+
+- [Handling False Positives in ModSecurity](https://www.netnea.com/cms/apache-tutorial-8_handling-false-positives-modsecurity-core-rule-set/)
+- [Example: OWASP Core Rule Set](https://github.com/coreruleset/coreruleset/tree/v3.3/master/rules)
+- [Example: Custom exlusions included with this add-on](https://github.com/jhampson-dbre/nginx-proxy-waf/blob/main/nginx_proxy/rootfs/usr/local/owasp-modsecurity-crs/rules/REQUEST-900.9001-HOME-ASSISTANT-EXCLUSION-RULES.conf)
+
 ## Known issues and limitations
 
 - By default, port 80 is disabled in the add-on configuration in case the port is needed for other components or add-ons like `emulated_hue`.
