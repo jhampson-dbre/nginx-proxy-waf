@@ -85,7 +85,7 @@ if bashio::config.true 'security.active'; then
     fi
 
     if bashio::config.true 'security.customize'; then
-        sed -i 's|#Include "/share/nginx_proxy/rules/*.conf"|Include "/share/nginx_proxy/rules/*.conf"|' /etc/modsec/main.conf
+        sed -i 's|#Include "/share/nginx_proxy/rules/*.conf"|Include "/share/nginx_proxy/rules/*.conf"|' /etc/nginx/modsec/main.conf
     fi
 
 fi

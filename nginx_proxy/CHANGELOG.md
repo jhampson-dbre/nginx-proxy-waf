@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.1.1
+
+Fix incorrect path to modsecurity rules inclusion file
+
 ## 4.1.0
 
 Add new `security.customize` option to allow for creating custom ModSecurity exclusion rules. See the docs for details.
