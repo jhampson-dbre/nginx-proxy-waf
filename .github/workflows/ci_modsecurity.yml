@@ -4,11 +4,9 @@ name: CI modsecurity
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [main]
-    paths:
-      - "nginx_proxy/modsecurity/**"
+  # Triggers the workflow on pull request events but only for the main branch
+  # Don't run on merge to master because it takes a long time to run and usually
+  # we want to publish right after merging
   pull_request:
     branches: [main]
     paths:
@@ -31,7 +29,7 @@ jobs:
           args: |
             --test \
             --all \
-            --generic 1.0.1 \
+            --generic 2.0.0 \
             --target nginx_proxy/modsecurity/
 
   build_nginx:

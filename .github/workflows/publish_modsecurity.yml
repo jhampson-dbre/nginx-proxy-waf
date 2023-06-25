@@ -1,4 +1,4 @@
-name: Publish All
+name: Publish ModSecurity
 
 on:
   workflow_dispatch:
@@ -21,23 +21,4 @@ jobs:
             --all \
             --generic 2.0.0 \
             --target nginx_proxy/modsecurity/ \
-            --docker-hub jhampdbre
-  publish_nginx:
-    name: Publish nginx
-    needs: publish_modsecurity
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Publish nginx
-        uses: home-assistant/builder@master
-        with:
-          args: |
-            --all \
-            --target nginx_proxy/ \
             --docker-hub jhampdbre
