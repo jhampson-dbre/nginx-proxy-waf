@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.0.0
+
+BREAKING CHANGE: Nginx is updated to version 1.24.0
+
+Other noteworth changes:
+
+- Bump Alpine version to 3.18
+- Build ModSecurity from [2cb6344](https://github.com/SpiderLabs/ModSecurity/tree/2cb6344bf8a1f7d564d45d6d6a3745212abdd37f)
+- Build Core Rule Set from [ec00051](https://github.com/coreruleset/coreruleset/tree/ec0005183329f0241a31c8bd136598023d9aa8aa)
+
 ## 4.1.1
 
 Fix incorrect path to modsecurity rules inclusion file
