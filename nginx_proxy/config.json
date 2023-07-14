@@ -1,6 +1,6 @@
 {
   "name": "NGINX Home Assistant SSL proxy with WAF",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "slug": "nginx_proxy_waf",
   "description": "An SSL/TLS proxy",
   "url": "https://github.com/jhampson-dbre/addon-nginx-proxy-waf",
@@ -55,5 +55,5 @@
       "customize": "bool?"
     }
   },
-  "image": "jhampdbre/{arch}-nginx-1-20-2-proxy-waf"
+  "image": "jhampdbre/{arch}-nginx-1-24-0-proxy-waf"
 }
