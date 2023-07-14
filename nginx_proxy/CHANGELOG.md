@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.1
+
+Fix s6-overlay error due to breaking change in latest base image
+
 ## 5.0.0
 
 BREAKING CHANGE: Nginx is updated to version 1.24.0
