@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.2
+
+Add debugging for startup error
+
 ## 5.0.1
 
 Fix s6-overlay error due to breaking change in latest base image

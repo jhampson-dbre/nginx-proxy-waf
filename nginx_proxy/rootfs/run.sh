@@ -1,5 +1,5 @@
-#!/usr/bin/env bashio
-set -e
+#!/usr/bin/with-contenv bashio
+set -ex
 
 DHPARAMS_PATH=/data/dhparams.pem
 
