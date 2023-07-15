@@ -1,5 +1,17 @@
 #!/usr/bin/with-contenv bashio
-set -ex
+set -e
+
+# If there is a problem loading options,
+# then we need verbose output to troubleshoot.
+# But if the options aren't loading, then we
+# can't rely on options config to enable debug
+# so we toggle debug with a touch file instead.
+DEBUG_TOUCH_FILE=/share/nginx_proxy_waf.debug
+
+if ! bashio::fs.file_exists "${DEBUG_TOUCH_FILE}"; then
+    bashio::log.info  "Addon startup debug is enabled..."
+    set -x
+fi
 
 DHPARAMS_PATH=/data/dhparams.pem
 
