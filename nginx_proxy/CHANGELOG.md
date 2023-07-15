@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.4
+
+Fix startup debug config on/off inversion
+
 ## 5.0.3
 
 Make enabling startup debugging configurable

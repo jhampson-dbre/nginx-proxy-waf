@@ -8,7 +8,7 @@ set -e
 # so we toggle debug with a touch file instead.
 DEBUG_TOUCH_FILE=/share/nginx_proxy_waf.debug
 
-if ! bashio::fs.file_exists "${DEBUG_TOUCH_FILE}"; then
+if bashio::fs.file_exists "${DEBUG_TOUCH_FILE}"; then
     bashio::log.info  "Addon startup debug is enabled..."
     set -x
 fi
