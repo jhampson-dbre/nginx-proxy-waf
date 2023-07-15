@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.3
+
+Make enabling startup debugging configurable
+
 ## 5.0.2
 
 Add debugging for startup error
